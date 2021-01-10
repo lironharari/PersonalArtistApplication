@@ -40,7 +40,6 @@ function PhotographyScreen({ route,navigation }) {
     return b.order - a.order
   }
 
-
     return (
       <SafeAreaView style={styles.container}>
         <DropDownPicker
@@ -55,15 +54,14 @@ function PhotographyScreen({ route,navigation }) {
             placeholder="Select a project"
             dropDownMaxHeight={300}
             defaultValue={category}
-            containerStyle={{height: 40,marginBottom:0}}
+            containerStyle={{height: 50,marginBottom:0}}
             style={{backgroundColor: '#ffff'}}
-            selectedLabelStyle={{color: '#000000'}}
+            selectedLabelStyle={{color: '#000000', fontSize:16}}
             activeItemStyle={{backgroundColor: 'rgba(0,0,0,0.1)'}}
-            itemStyle={{ justifyContent: 'flex-start', paddingLeft:10 }}
+            itemStyle={{ justifyContent: 'flex-start', paddingLeft:10, height: 40 }}
             dropDownStyle={{backgroundColor: '#ffff'}}
             onChangeItem={item => setCategory(item.value)}
-        />
-
+        />        
         <FlatGrid
             itemDimension={widthElement}        
             data={photos.filter(filter).sort(sort)}        
@@ -71,7 +69,6 @@ function PhotographyScreen({ route,navigation }) {
             spacing={0}
             renderItem={renderItem}
         /> 
-
       </SafeAreaView>
     );
   }
