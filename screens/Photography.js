@@ -29,7 +29,7 @@ function PhotographyScreen({ route,navigation }) {
     </View>
   ); 
 
-  const filter = (photo) =>{  
+  const filter = (photo) => {  
     if (category ===  'all' || category === null || category === '')
       return photo;
     else
@@ -39,18 +39,33 @@ function PhotographyScreen({ route,navigation }) {
   const sort = (a, b) =>{    
     return b.order - a.order
   }
+  
+  const gridData = React.useMemo(() => photos.filter(filter).sort(sort), [category]);
+
+  const countDropDownItems = (value) => { 
+    if(value === 'all')
+      return photos.length;
+    else
+      return photos.filter((photo) => { return photo.category === value; }).length;
+  }
+ 
+  const getdropDownItems = () => { 
+      return [
+        {label: `All Photos (${countDropDownItems('all')})` , value: 'all'},
+        {label: `It\'s more fun in Manila (${countDropDownItems('manila')})`, value: 'manila'},
+        {label: `Life on the railroads (${countDropDownItems('india')})`, value: 'india'},
+        {label: `Street Photography (${countDropDownItems('street')})`, value: 'street'},
+        {label: `Kids (${countDropDownItems('kids')})`, value: 'kids'},
+        {label: `Animals (${countDropDownItems('animals')})`, value: 'animals'},
+    ];
+  }
+
+  const dropDownItems = React.useMemo(() => getdropDownItems(), []);
 
     return (
       <SafeAreaView style={styles.container}>
         <DropDownPicker
-            items={[
-                {label: 'All Photos', value: 'all'},
-                {label: 'It\'s more fun in Manila', value: 'manila'},
-                {label: 'Life on the railroads', value: 'india'},
-                {label: 'Street Photography', value: 'street'},
-                {label: 'Kids', value: 'kids'},
-                {label: 'Animals', value: 'animals'},
-            ]}
+            items={dropDownItems}
             placeholder="Select a project"
             dropDownMaxHeight={300}
             defaultValue={category}
@@ -64,7 +79,7 @@ function PhotographyScreen({ route,navigation }) {
         />        
         <FlatGrid
             itemDimension={widthElement}        
-            data={photos.filter(filter).sort(sort)}        
+            data={gridData}        
             style={{ flex: 1, padding: paddingElement }}
             spacing={0}
             renderItem={renderItem}
