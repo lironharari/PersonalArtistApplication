@@ -3,10 +3,9 @@ import { View, Image, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeScreen } from '../screens/Home'
-import { ChannelScreen } from '../screens/Channel'
+import { InterventionStackScreen } from '../screens/Intervention'
 import { PhotographyStackScreen } from '../screens/Photography'
 import { DrawingsStackScreen } from '../screens/Drawings'
-import { MusicScreen } from '../screens/Music'
 import { AboutScreen } from '../screens/About'
 import { TabBarIcon } from './TabBarIcon'
 
@@ -37,10 +36,9 @@ export function Nav () {
                                                                         styles.aboutIconActive)),})}       
                     >
                         <Tab.Screen name="Home" component={HomeScreen} />
-                        <Tab.Screen name="Channel" component={ChannelScreen} />
+                        <Tab.Screen name="Intervention" component={InterventionStackScreen} />
                         <Tab.Screen name="Photography" component={PhotographyStackScreen}/>
                         <Tab.Screen name="Drawings" component={DrawingsStackScreen} />                        
-                        <Tab.Screen name="Music" component={MusicScreen} />
                         <Tab.Screen name="About" component={AboutScreen} />                                             
                     </Tab.Navigator>                                                                
                 </NavigationContainer>                

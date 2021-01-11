@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { Image } from 'react-native';
-import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 
 export function TabBarIcon(routeName, focused, activeTintColor, inactiveTintColor, aboutIconInactive, aboutIconActive) {
     let color = focused ? activeTintColor : inactiveTintColor;    
-    //let aboutIconStyle = focused ? styles.aboutIconActive : styles.aboutIconInactive;    
-    let size = 24;
+    let size = (routeName == 'Intervention') ? 26:24;
     
     switch(routeName) {
         case 'Home':
@@ -16,8 +15,8 @@ export function TabBarIcon(routeName, focused, activeTintColor, inactiveTintColo
           return <FontAwesome5 name="camera" size={size} color={color} />;
         case 'Drawings':
           return <FontAwesome name="pencil" size={size} color={color} />;
-        case 'Music':
-          return <FontAwesome name="music" size={size} color={color} />;                                                
+        case 'Intervention':
+          return <MaterialCommunityIcons name="alien-outline" size={size} color={color} />;
         case 'About':          
           return <Image style={[focused ? aboutIconActive : aboutIconInactive]} source={require('../assets/personalIcon.png')} />;
         default:

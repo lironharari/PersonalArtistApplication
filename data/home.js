@@ -13,7 +13,7 @@ export default [
     },    
     {
         src: require('../assets/images/thumbnails/20.jpg'),      
-        linkTo: 'Channel',
+        linkTo: 'Intervention',
         text: 'Human History Revisited',
         category: ''
     },  
@@ -61,7 +61,7 @@ export default [
     },  
     {
         src: require('../assets/images/thumbnails/1392371408_paracas.jpg'),      
-        linkTo: 'Channel',
+        linkTo: 'Intervention',
         text: 'Human History Revisited',
         category: ''
     },      
