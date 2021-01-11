@@ -2,7 +2,6 @@ import React from 'react';
 import {  Text, SafeAreaView, View, StyleSheet, ScrollView, Linking, TouchableOpacity, ImageBackground, Dimensions, Image  } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { DetailsScreen } from './Details'
-import { FlatGrid } from 'react-native-super-grid';
 import photos from '../data/intervention.js'
 
 // video 
@@ -20,22 +19,32 @@ const windowWidthForGrid = Dimensions.get('window').width - (imagePadding * imag
 const numberElements = 3;
 const imageWidth = windowWidthForGrid / numberElements;
 const imageHeight = 170;
+const containerHeight = (imageHeight * 2) + (4 * imagePadding);
  
 
 
 function InterventionScreen({ navigation }) {
-
-  const renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
-      <TouchableOpacity onPress={() => navigation.navigate('Details', {
-          src: item.src,
-          width: item.width,
-          height: item.height
-        })}>
-        <Image style={styles.image} source={item.srcThumb}/>
-      </TouchableOpacity>                                                                           
-    </View>
-  ); 
+  
+  const ImageGrid = ({photos,episode}) => {
+    const gridData = React.useMemo(() => photos.filter((photo) => photo.episode === episode), [episode]);
+    return (
+      <View style={styles.imageGrid}>
+      {
+        gridData.map((item,index)=>(
+          <View key={index} style={styles.itemContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate('Details', {
+                src: item.src,
+                width: item.width,
+                height: item.height
+              })}>
+              <Image style={styles.image} source={item.srcThumb}/>
+            </TouchableOpacity>                                                                           
+        </View>              
+        ))
+      }
+      </View>
+    )
+  }
 
     return (
       <SafeAreaView style={styles.container}>
@@ -69,14 +78,8 @@ function InterventionScreen({ navigation }) {
           <TouchableOpacity style={styles.video} onPress={() => { Linking.openURL( 'https://www.youtube.com/watch?v=zoFTK9Mo0JM&list=PLbd-yCGYHip0TDXxb4NmKelBUQJ-odshp&index=1' );}} >
               <ImageBackground style={styles.imageBackground} source={require('../assets/images/videos/ep1.jpg')}></ImageBackground>  
           </TouchableOpacity>
-
-          <FlatGrid
-            itemDimension={imageWidth}        
-            data={photos.filter((photo) => photo.episode === 1)}        
-            style={{flex: 1, padding: imagePadding, marginBottom:15}}
-            spacing={0}
-            renderItem={renderItem}
-        /> 
+        
+          <ImageGrid photos={photos} episode={1}/>
 
           <Text style={styles.chapterHeader}>Episode 2</Text>
           <Text style={styles.chapterSubHeader}>The Forgotten Mother</Text>
@@ -92,13 +95,7 @@ function InterventionScreen({ navigation }) {
               <ImageBackground style={styles.imageBackground} source={require('../assets/images/videos/ep2.jpg')}></ImageBackground>  
           </TouchableOpacity>   
 
-          <FlatGrid
-            itemDimension={imageWidth}        
-            data={photos.filter((photo) => photo.episode === 2)}        
-            style={{flex: 1, padding: imagePadding, marginBottom:15}}
-            spacing={0}
-            renderItem={renderItem}
-        /> 
+          <ImageGrid photos={photos} episode={2}/>
 
           <Text style={styles.chapterHeader}>Episode 3</Text>
           <Text style={styles.chapterSubHeader}>The Super-Earth that Came Home for Dinner</Text>
@@ -114,13 +111,7 @@ function InterventionScreen({ navigation }) {
               <ImageBackground style={styles.imageBackground} source={require('../assets/images/videos/ep3.jpg')}></ImageBackground>  
           </TouchableOpacity>
 
-          <FlatGrid
-            itemDimension={imageWidth}        
-            data={photos.filter((photo) => photo.episode === 3)}        
-            style={{flex: 1, padding: imagePadding, marginBottom:15}}
-            spacing={0}
-            renderItem={renderItem}
-        /> 
+          <ImageGrid photos={photos} episode={3}/>
 
           <Text style={styles.chapterHeader}>Episode 4</Text>
           <Text style={styles.chapterSubHeader}>Those who from Heaven to Earth came</Text>
@@ -136,13 +127,7 @@ function InterventionScreen({ navigation }) {
               <ImageBackground style={styles.imageBackground} source={require('../assets/images/videos/ep4.jpg')}></ImageBackground>  
           </TouchableOpacity>
 
-          <FlatGrid
-            itemDimension={imageWidth}        
-            data={photos.filter((photo) => photo.episode === 4)}        
-            style={{flex: 1, padding: imagePadding, marginBottom:15}}
-            spacing={0}
-            renderItem={renderItem}
-        /> 
+          <ImageGrid photos={photos} episode={4}/>
 
           <Text style={styles.chapterHeader}>Episode 5</Text>
           <Text style={styles.chapterSubHeader}>The Shiny Herd</Text>
@@ -158,13 +143,7 @@ function InterventionScreen({ navigation }) {
               <ImageBackground style={styles.imageBackground} source={require('../assets/images/videos/ep5.jpg')}></ImageBackground>  
           </TouchableOpacity>
 
-          <FlatGrid
-            itemDimension={imageWidth}        
-            data={photos.filter((photo) => photo.episode === 5)}        
-            style={{flex: 1, padding: imagePadding, marginBottom:15}}
-            spacing={0}
-            renderItem={renderItem}
-        /> 
+          <ImageGrid photos={photos} episode={5}/>
 
           <Text style={styles.chapterHeader}>Episode 6</Text>
           <Text style={styles.chapterSubHeader}>Set in Stone</Text>
@@ -180,13 +159,7 @@ function InterventionScreen({ navigation }) {
               <ImageBackground style={styles.imageBackground} source={require('../assets/images/videos/ep6.jpg')}></ImageBackground>  
           </TouchableOpacity> 
 
-          <FlatGrid
-            itemDimension={imageWidth}        
-            data={photos.filter((photo) => photo.episode === 6)}        
-            style={{flex: 1, padding: imagePadding, marginBottom:15}}
-            spacing={0}
-            renderItem={renderItem}
-        /> 
+          <ImageGrid photos={photos} episode={6}/>
 
           <Text style={styles.chapterHeader}>Episode 7</Text>
           <Text style={styles.chapterSubHeader}>The Fruits of Knowledge</Text>
@@ -202,13 +175,7 @@ function InterventionScreen({ navigation }) {
               <ImageBackground style={styles.imageBackground} source={require('../assets/images/videos/ep7.jpg')}></ImageBackground>  
           </TouchableOpacity> 
 
-          <FlatGrid
-            itemDimension={imageWidth}        
-            data={photos.filter((photo) => photo.episode === 7)}        
-            style={{flex: 1, padding: imagePadding, marginBottom:15}}
-            spacing={0}
-            renderItem={renderItem}
-        />
+          <ImageGrid photos={photos} episode={7}/>
 
           <Text style={styles.chapterHeader}>Episode 8</Text>
           <Text style={styles.chapterSubHeader}>The Prehistory Mystery</Text>
@@ -224,13 +191,7 @@ function InterventionScreen({ navigation }) {
               <ImageBackground style={styles.imageBackground} source={require('../assets/images/videos/ep8.jpg')}></ImageBackground>  
           </TouchableOpacity> 
 
-          <FlatGrid
-            itemDimension={imageWidth}        
-            data={photos.filter((photo) => photo.episode === 8)}        
-            style={{flex: 1, padding: imagePadding, marginBottom:15}}
-            spacing={0}
-            renderItem={renderItem}
-        />
+          <ImageGrid photos={photos} episode={8}/>
 
           <Text style={styles.chapterHeader}>Episode 9</Text>
           <Text style={styles.chapterSubHeader}>Unnatural Selection</Text>
@@ -246,13 +207,7 @@ function InterventionScreen({ navigation }) {
               <ImageBackground style={styles.imageBackground} source={require('../assets/images/videos/ep9.jpg')}></ImageBackground>  
           </TouchableOpacity>                    
 
-          <FlatGrid
-            itemDimension={imageWidth}        
-            data={photos.filter((photo) => photo.episode === 9)}        
-            style={{flex: 1, padding: imagePadding, marginBottom:15}}
-            spacing={0}
-            renderItem={renderItem}
-        />
+          <ImageGrid photos={photos} episode={9}/>
 
         </ScrollView>
       </SafeAreaView>
@@ -272,6 +227,7 @@ function InterventionScreen({ navigation }) {
     chapterHeader: {
       fontSize: 25,
       textAlign:'center',
+      marginTop:10
     },    
     chapterSubHeader: {
       fontSize: 25,
@@ -298,16 +254,22 @@ function InterventionScreen({ navigation }) {
       resizeMode: "cover",
     }, 
     itemContainer: {
-      justifyContent: 'flex-end',  
-      marginTop: 10, 
+      margin:imagePadding,
       width: imageWidth, 
-      height:imageHeight,      
+      height:imageHeight,       
     },
     image: {
       width: imageWidth, 
       height:imageHeight,
       resizeMode: "cover",
-    },        
+    },    
+    imageGrid:{
+      flex: 1,
+      width: windowWidthForGrid,
+      height: containerHeight,
+      alignItems: 'baseline',
+      flexWrap: 'wrap',
+    }    
   });
 
 const InterventionStack = createStackNavigator();
