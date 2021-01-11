@@ -4,7 +4,7 @@ import { FontAwesome, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-
 
 export function TabBarIcon(routeName, focused, activeTintColor, inactiveTintColor, aboutIconInactive, aboutIconActive) {
     let color = focused ? activeTintColor : inactiveTintColor;    
-    let size = (routeName == 'Intervention') ? 26:24;
+    let size = (routeName == 'Intervention') ? 29:27;
     
     switch(routeName) {
         case 'Home':
