@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Image, View, StyleSheet, Text, Dimensions } from 'react-native';
-//import { createStackNavigator } from '@react-navigation/stack';
 import {Header} from '../components/Header'
 
 export function AboutScreen({ navigation }) {    
@@ -47,13 +46,3 @@ export function AboutScreen({ navigation }) {
       width: Dimensions.get('window').width
  }
   });
-
-// const AboutStack = createStackNavigator();
-
-// export function AboutStackScreen() {
-//   return (
-//     <AboutStack.Navigator headerMode="none">
-//       <AboutStack.Screen name="About" component={AboutScreen} />
-//     </AboutStack.Navigator>
-//   );
-// }

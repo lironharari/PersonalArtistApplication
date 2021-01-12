@@ -4,6 +4,7 @@ import { DetailsScreen } from './Details'
 import photos from '../data/drawings.js'
 import { SafeAreaView, View, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
+import {GridItem} from '../components/GridItem';
 
 const paddingElement = 5;
 const paddingElementCount = 4;
@@ -15,15 +16,11 @@ const heightElement = 170;
 function DrawingsScreen({ navigation }) { 
   
   const renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
-      <TouchableOpacity onPress={() => navigation.navigate('Details', {
-          src: item.src,
-          width: item.width,
-          height: item.height
-        })}>
-        <Image style={styles.image} source={item.srcThumb}/>
-      </TouchableOpacity>                                                                           
-    </View>
+    <GridItem 
+    item={item} 
+    itemContainer={styles.itemContainer} 
+    image={styles.image} 
+    navigation={navigation}/>
   ); 
 
   const sort = (a, b) =>{    

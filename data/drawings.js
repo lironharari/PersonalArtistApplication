@@ -305,7 +305,7 @@ export default [
         src: require('../assets/images/_DSC3766.jpg'),      
         height: 907,
         width: 1210,
-        order: 10
+        order: 99
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3768.jpg'),      
@@ -319,7 +319,7 @@ export default [
         src: require('../assets/images/_DSC3770.jpg'),      
         height: 1027,
         width: 1494,
-        order: 10
+        order: 100
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3772.jpg'),      
@@ -347,98 +347,98 @@ export default [
         src: require('../assets/images/_DSC3913.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 98
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3917.jpg'),      
         src: require('../assets/images/_DSC3917.jpg'),      
         height: 2000,
         width: 3000,
-        order: 10
+        order: 97
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3918.jpg'),      
         src: require('../assets/images/_DSC3918.jpg'),      
         height: 2000,
         width: 3000,
-        order: 10
+        order: 90
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3924.jpg'),      
         src: require('../assets/images/_DSC3924.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 92
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3926.jpg'),      
         src: require('../assets/images/_DSC3926.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 91
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3932.jpg'),      
         src: require('../assets/images/_DSC3932.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 89
     },                                                                                                   
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3936.jpg'),      
         src: require('../assets/images/_DSC3936.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 88
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3946.jpg'),      
         src: require('../assets/images/_DSC3946.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 87
     },                                                                                                   
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3953.jpg'),      
         src: require('../assets/images/_DSC3953.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 86
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3956.jpg'),      
         src: require('../assets/images/_DSC3956.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 85
     },                                                                                                   
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3960.jpg'),      
         src: require('../assets/images/_DSC3960.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 84
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3962.jpg'),      
         src: require('../assets/images/_DSC3962.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 83
     },                                                                                                   
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3964.jpg'),      
         src: require('../assets/images/_DSC3964.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 82
     },                                            
     {
         srcThumb: require('../assets/images/thumbnails/_DSC3970.jpg'),      
         src: require('../assets/images/_DSC3970.jpg'),      
         height: 1600,
         width: 2400,
-        order: 10
+        order: 81
     },                                                                                                   
     {
         srcThumb: require('../assets/images/thumbnails/EPSON006.jpg'),      
@@ -530,5 +530,33 @@ export default [
         height: 974,
         width: 1442,
         order: 10
-    }                                                                                                               
+    },   
+    {
+        srcThumb: require('../assets/images/thumbnails/_DSC3941.jpg'),      
+        src: require('../assets/images/_DSC3941.jpg'),      
+        height: 2000,
+        width: 3000,
+        order: 93
+    },
+    {
+        srcThumb: require('../assets/images/thumbnails/_DSC3930.jpg'),      
+        src: require('../assets/images/_DSC3930.jpg'),      
+        height: 2000,
+        width: 3000,
+        order: 94
+    },
+    {
+        srcThumb: require('../assets/images/thumbnails/_DSC3974.jpg'),      
+        src: require('../assets/images/_DSC3974.jpg'),      
+        height: 2000,
+        width: 3000,
+        order: 95
+    },
+    {
+        srcThumb: require('../assets/images/thumbnails/_DSC3977.jpg'),      
+        src: require('../assets/images/_DSC3977.jpg'),      
+        height: 2000,
+        width: 3000,
+        order: 96
+    },           
   ];

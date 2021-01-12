@@ -3,6 +3,7 @@ import {  Text, SafeAreaView, View, StyleSheet, ScrollView, Linking, TouchableOp
 import { createStackNavigator } from '@react-navigation/stack';
 import { DetailsScreen } from './Details'
 import photos from '../data/intervention.js'
+import {GridItem} from '../components/GridItem';
 
 // video 
 const paddingElement = 20;
@@ -29,19 +30,14 @@ function InterventionScreen({ navigation }) {
     const gridData = React.useMemo(() => photos.filter((photo) => photo.episode === episode), [episode]);
     return (
       <View style={styles.imageGrid}>
-      {
-        gridData.map((item,index)=>(
-          <View key={index} style={styles.itemContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Details', {
-                src: item.src,
-                width: item.width,
-                height: item.height
-              })}>
-              <Image style={styles.image} source={item.srcThumb}/>
-            </TouchableOpacity>                                                                           
-        </View>              
-        ))
-      }
+        {gridData.map((item,index)=>(
+          <GridItem 
+                  key={index}
+                  item={item} 
+                  itemContainer={styles.itemContainer} 
+                  image={styles.image} 
+                  navigation={navigation}/>             
+        ))}
       </View>
     )
   }

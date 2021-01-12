@@ -5,6 +5,7 @@ import { DetailsScreen } from './Details'
 import { createStackNavigator } from '@react-navigation/stack';
 import photos from '../data/photography.js'
 import { FlatGrid } from 'react-native-super-grid';
+import {GridItem} from '../components/GridItem';
 
 const paddingElement = 5;
 const paddingElementCount = 4;
@@ -14,23 +15,19 @@ const widthElement = windowWidth / numberElements;
 const heightElement = 170;
 
 
-function PhotographyScreen({ route,navigation }) {   
+function PhotographyScreen({ navigation }) {   
   const [category,setCategory] = useState('all');  
 
   const renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
-      <TouchableOpacity onPress={() => navigation.navigate('Details', {
-          src: item.src,
-          width: item.width,
-          height: item.height
-        })}>
-        <Image style={styles.image} source={item.srcThumb}/>
-      </TouchableOpacity>                                                                           
-    </View>
+    <GridItem 
+              item={item} 
+              itemContainer={styles.itemContainer} 
+              image={styles.image} 
+              navigation={navigation}/>
   ); 
 
   const filter = (photo) => {  
-    if (category ===  'all' || category === null || category === '')
+    if (category === 'all')
       return photo;
     else
       return photo.category === category
@@ -63,7 +60,7 @@ function PhotographyScreen({ route,navigation }) {
   const dropDownItems = React.useMemo(() => getdropDownItems(), []);
 
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.container}>        
         <DropDownPicker
             items={dropDownItems}
             placeholder="Select a project"

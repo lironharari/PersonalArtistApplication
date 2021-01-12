@@ -21,9 +21,9 @@ export function Nav () {
                         initialRouteName="Home"
                         tabBarOptions={{    activeTintColor: activeTintColor, 
                                             inactiveTintColor: inactiveTintColor, 
-                                            style:{height:45}, 
+                                            style:{height:50}, 
                                             tabStyle: {
-                                                height: 45,                                                
+                                                height: 50,                                                
                                               },                                      
                                             showIcon : true, 
                                             showLabel : false }}        
