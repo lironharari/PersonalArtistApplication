@@ -13,12 +13,12 @@ The app was converted from a [Personal Artist Website](https://lironharari.herok
 
 # Screenshots
 ### Home screen
-![Home screen](public/images/home.jpg);
+![Home screen](public/images/home.jpg)
 ### Intervention screen
-![Intervention screen](public/images/intervention.jpg);
+![Intervention screen](public/images/intervention.jpg)
 ### Photography screen
-![Photography screen](public/images/photography.jpg);
+![Photography screen](public/images/photography.jpg)
 ### Drawing screen
-![Drawing screen](public/images/drawing.jpg);
+![Drawing screen](public/images/drawing.jpg)
 ### About screen
-![About screen](public/images/about.jpg);
+![About screen](public/images/about.jpg)
