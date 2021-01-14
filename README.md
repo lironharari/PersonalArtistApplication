@@ -12,13 +12,13 @@ The app displays artistic projects including:
 The app was converted from a [Personal Artist Website](https://lironharari.herokuapp.com/)
 
 # Screenshots
-### Home screen
+## Home screen
 ![Home screen](public/images/home.jpg)
-### Intervention screen
+## Intervention screen
 ![Intervention screen](public/images/intervention.jpg)
-### Photography screen
+## Photography screen
 ![Photography screen](public/images/photography.jpg)
-### Drawing screen
+## Drawing screen
 ![Drawing screen](public/images/drawing.jpg)
-### About screen
+## About screen
 ![About screen](public/images/about.jpg)
